@@ -1,0 +1,17 @@
+<div>
+  <mat-toolbar>
+    <mat-toolbar-row>
+      <span class="spacer"></span>
+      <!--<a mat-button routerLink="/register">Register</a>-->
+      <span></span>
+      <a mat-button (click)="newNote()">New Notes</a>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <div class="cardgroup">
+    <ng-container *ngFor="let note of notes">
+      <ng-container *ngIf="!note.deleted">
+        <app-note-item [note]="note"></app-note-item>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>

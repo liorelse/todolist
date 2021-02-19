@@ -1,0 +1,21 @@
+<div [ngClass]="setClasses()">
+  <div class="card card-{{note.status}}" [ngClass]="{'invalid': !isValid}">
+    <form [formGroup]="cardForm">
+      <div class="card-content">
+        <mat-form-field class="card-title">
+          <mat-label></mat-label>
+          <input matInput placeholder="Note title" name="title" formControlName="title">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label></mat-label>
+          <textarea matInput placeholder="Note" name="body" formControlName="body"></textarea>
+        </mat-form-field>
+      </div>
+    </form>
+    <footer class="card-footer">
+      <p>{{ note.edited }}</p>
+      <button #btnDone id="btnDone" class="btn-{{note.status}}" (click)="onDone(note)"></button>
+      <button #btnDel id="btnDel" class="del" (click)="onDelete(note)">X</button>
+    </footer>
+  </div>
+</div>

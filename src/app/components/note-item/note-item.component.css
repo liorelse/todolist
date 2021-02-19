@@ -1,0 +1,77 @@
+mat-form-field {
+  width: 100%;
+}
+
+button {
+  margin-left: 1rem;
+  color: #fff;
+  border: none;
+  padding: 5px 9px;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  float: right;
+}
+
+.example-container .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+
+.card {
+  background: #fffcf2;
+  border-radius: 0.5rem;
+  border: 1px solid #202020;
+  display: grid;
+  grid-template-rows: -webkit-min-content 1fr -webkit-min-content;
+  grid-template-rows: min-content 1fr min-content;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+  grid-row-gap: 0;
+  padding: 1rem;
+}
+
+.card-todo {
+  border: 3px solid #4cc9f0;
+}
+
+.card-done {
+  border: 3px solid #aacc00;
+}
+
+.card-content {
+  border-bottom: 1px solid #2E2E2E;
+  padding-block: 1rem;
+}
+
+.card-footer {
+  -webkit-padding-before: 1rem;
+          padding-block-start: 1rem;
+}
+
+.card-title {
+  font-size: x-large;
+}
+
+.valid {
+  border-color: #4285F4;
+}
+
+.invalid {
+  border-color: #ff4444;
+}
+
+.btn-done {
+  background: #FF8800;
+}
+
+.btn-todo {
+  background: #388e3c;
+}
+
+.del {
+  background: #ff4444;
+}
+
+.is-deleted {
+  text-decoration: line-through;
+}
+
