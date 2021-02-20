@@ -1,5 +1,5 @@
-<div [ngClass]="setClasses()">
-  <div class="card card-{{note.status}}" [ngClass]="{'invalid': !isValid}">
+<div>
+  <div class="card card-{{note.status}}" [ngClass]="{'invalid': !cardForm.valid}">
     <form [formGroup]="cardForm">
       <div class="card-content">
         <mat-form-field class="card-title">
@@ -13,7 +13,7 @@
       </div>
     </form>
     <footer class="card-footer">
-      <p>{{ note.edited }}</p>
+      <p>Note edited: {{ note.edited | date:'medium' }}</p>
       <button #btnDone id="btnDone" class="btn-{{note.status}}" (click)="onDone(note)"></button>
       <button #btnDel id="btnDel" class="del" (click)="onDelete(note)">X</button>
     </footer>

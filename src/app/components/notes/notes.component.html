@@ -4,14 +4,26 @@
       <span class="spacer"></span>
       <!--<a mat-button routerLink="/register">Register</a>-->
       <span></span>
-      <a mat-button (click)="newNote()">New Notes</a>
+      <!-- <a class="btn-standard" mat-button href="/notes">Reload</a>
+      <span class="spacer"></span> -->
+      <a class="btn-new" mat-button (click)="newNote()" href="/notes">New Note</a>
+      <span class="spacer-large"></span>
+      <span>Display:</span>
+      <span class="spacer"></span>
+      <a class="btn-todo" mat-button (click)="statusTodo()">Todo</a>
+      <span class="spacer"></span>
+      <a class="btn-done" mat-button (click)="statusDone()">Done</a>
+      <span class="spacer"></span>
+      <a class="btn-new" mat-button (click)="statusAll()">All</a>
     </mat-toolbar-row>
   </mat-toolbar>
   <div class="cardgroup">
-    <ng-container *ngFor="let note of notes">
-      <ng-container *ngIf="!note.deleted">
+    <ng-container *ngIf="noteObs | async as noteArray">
+    <ng-container *ngFor="let note of noteArray">
+      <ng-container *ngIf="!note.deleted && getEnabledStatus().includes(note.status)">
         <app-note-item [note]="note"></app-note-item>
       </ng-container>
+    </ng-container>
     </ng-container>
   </div>
 </div>

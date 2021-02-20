@@ -1,3 +1,11 @@
+.spacer {
+  width: 1rem;
+}
+
+.spacer-large {
+  width: 3rem;
+}
+
 .cardgroup {
   display: grid;
   margin-top: 1rem;
@@ -5,4 +13,20 @@
   grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
   grid-template-rows: repeat(2, -webkit-min-content 1fr -webkit-min-content);
   grid-template-rows: repeat(2, min-content 1fr min-content);
+}
+
+.btn-standard {
+  background: #bdbdbd;
+}
+
+.btn-new {
+  background: #ffb74d;
+}
+
+.btn-todo {
+  background: #4cc9f0;
+}
+
+.btn-done {
+  background: #aacc00;
 }

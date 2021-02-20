@@ -14,18 +14,12 @@ export class NoteService {
   dateNow!: number;
   dateEdited!: Date;
   nextId!: number;
-  public allNotes!: Observable<Note[]>;
 
 
   constructor(
     private http: HttpClient) { }
 
   ngOnInit () {
-
-  }
-
-  updateEvent() {
-    this.allNotes = this.getNotesReverse()
   }
 
   getNotesMeta(): void {

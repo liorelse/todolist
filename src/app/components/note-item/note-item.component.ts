@@ -19,7 +19,6 @@ export class NoteItemComponent implements OnInit {
   idControl!: FormControl;
   titleControl!: FormControl;
   bodyControl!: FormControl;
-  isValid!: boolean;
   status!: string;
 
   private unsubscribe = new Subject<void>()
@@ -31,7 +30,6 @@ export class NoteItemComponent implements OnInit {
 
   ngOnInit(): void {
     this.initForm();
-    this.isValid = this.cardForm.valid;
 
   }
 
@@ -55,7 +53,7 @@ export class NoteItemComponent implements OnInit {
     });
     this.cardForm.valueChanges
       .pipe(
-        debounceTime(2500),
+        debounceTime(1000),
         switchMap(formValue => this.noteService.autoSave(formValue)),
         takeUntil(this.unsubscribe)
     )
@@ -72,14 +70,6 @@ export class NoteItemComponent implements OnInit {
 
   ngOnDestroy() {
     this.unsubscribe.next()
-  }
-
-  setClasses():object {
-    let classes = {
-      note: true,
-      'is-deleted': this.note.deleted,
-    }
-    return classes
   }
 
   setBtnDone(status: string = 'todo') {

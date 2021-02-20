@@ -19,7 +19,7 @@ button {
 .card {
   background: #fffcf2;
   border-radius: 0.5rem;
-  border: 1px solid #202020;
+  border: 2px solid #202020;
   display: grid;
   grid-template-rows: -webkit-min-content 1fr -webkit-min-content;
   grid-template-rows: min-content 1fr min-content;
@@ -30,11 +30,11 @@ button {
 }
 
 .card-todo {
-  border: 3px solid #4cc9f0;
+  border: 2px solid #4cc9f0;
 }
 
 .card-done {
-  border: 3px solid #aacc00;
+  border: 2px solid #aacc00;
 }
 
 .card-content {
